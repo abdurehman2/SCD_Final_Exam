@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checks out the code from the GitHub repository
-                git 'https://github.com/your-github-username/your-repo.git'
+                git 'https://github.com/abdurehman2/SCD_Final_Exam.git'
             }
         }
 
