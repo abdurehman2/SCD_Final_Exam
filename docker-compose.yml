@@ -1,17 +1,17 @@
 version: "3"
 services:
   frontend:
-    build: ./client
+    build: ./client:latest
     ports:
       - "3151:3151"
     volumes:
       - ./Images
   auth_backend:
-    build: ./Auth
+    build: ./Auth:latest
     ports:
       - "4151:4151"
   classrooms_backend:
-    build: ./Classrooms
+    build: ./Classrooms:latest
     ports:
       - "4152:4152"
   event-bus_backend:
@@ -19,7 +19,7 @@ services:
     ports:
       - "4153:4153"
   post_backend:
-    build: ./Post
+    build: ./Post:latest
     ports:
       - "4154:4154"
   db:
