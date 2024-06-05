@@ -1,0 +1,32 @@
+version: "3"
+services:
+  frontend:
+    build: ./client
+    ports:
+      - "3151:3151"
+    volumes:
+      - ./Images
+  auth_backend:
+    build: ./Auth
+    ports:
+      - "4151:4151"
+  classrooms_backend:
+    build: ./Classrooms
+    ports:
+      - "4152:4152"
+  event-bus_backend:
+    build: ./event-bus
+    ports:
+      - "4153:4153"
+  post_backend:
+    build: ./Post
+    ports:
+      - "4154:4154"
+  db:
+    image: mongo
+    volumes:
+      - dbdata:/data/db
+    ports:
+      - "27017:27017"
+volumes:
+  dbdata:
